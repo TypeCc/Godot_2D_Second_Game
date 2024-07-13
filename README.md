@@ -80,7 +80,8 @@ This project is licensed under the MIT License.
 ## Credits
 - **Developer:** [TypeCc](https://github.com/TypeCc)
 - **Engine:** Godot Engine
-- **Assets:** Custom artwork and sounds created by the developer.
+- **GDQuest:** [GDQuest](https://www.gdquest.com/tutorial/godot/2d/first-2d-game-godot-4/)
+- **Assets:** Custom artwork and sounds created by the [GDQuest](https://www.gdquest.com/tutorial/godot/2d/first-2d-game-godot-4/).
 
 ---
 
