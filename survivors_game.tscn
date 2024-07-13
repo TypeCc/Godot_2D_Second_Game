@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://d137bw0x5eu7j"]
+
+[ext_resource type="Script" path="res://survivors_game.gd" id="1_enjue"]
+[ext_resource type="PackedScene" uid="uid://kl7asm1kqf1u" path="res://player.tscn" id="1_ispyq"]
+[ext_resource type="PackedScene" uid="uid://cuc1i327h7u4s" path="res://pine_tree.tscn" id="2_sammg"]
+
+[sub_resource type="Curve2D" id="Curve2D_xjmxt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -184, -300, 0, 0, 0, 0, 2107, -290, 0, 0, 0, 0, 2115, 1206, 0, 0, 0, 0, -199, 1206, 0, 0, 0, 0, -184, -300)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_enjue")
+
+[node name="Player" parent="." instance=ExtResource("1_ispyq")]
+position = Vector2(862, 641)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-862, -641)
+curve = SubResource("Curve2D_xjmxt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-184, -300)
+rotation = 0.00436488
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(611, 980)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(2860, 1036)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(1671, 958)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(669, 348)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(1706, 221)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(250, 275)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(1194, 252)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(354, 778)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(1542, 694)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(1202, 639)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(905, 222)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("2_sammg")]
+position = Vector2(1447, 389)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1912.0
+offset_bottom = 1064.0
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.282353, 0.427451, 0.694118)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -11.5
+offset_right = 29.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "ÖLDÜN"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
