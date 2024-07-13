@@ -15,8 +15,10 @@ Welcome to **Survivor Slime**, a 2D game developed using Godot Engine. In this g
 **Survivor Slime** is an action-packed 2D survival game where you control a slime character navigating through challenging levels filled with enemies and obstacles. Your goal is to survive as long as possible and achieve the highest score.
 
 ## Screenshots
-![Gameplay]
-![Game Over]
+![Gameplay]<img width="958" alt="Ekran Resmi 2024-07-14 02 05 43" src="https://github.com/user-attachments/assets/85a15dd2-7866-4fee-9b6b-b4407caf25b8">
+
+![Game Over]<img width="958" alt="Ekran Resmi 2024-07-14 02 05 58" src="https://github.com/user-attachments/assets/9a2ae14e-b0aa-4734-a626-52ac1ea05633">
+
 
 ## Installation
 
